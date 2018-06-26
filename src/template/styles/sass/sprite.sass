@@ -1,0 +1,159 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$arrow-left-name: 'arrow-left'
+$arrow-left-x: 58px
+$arrow-left-y: 23px
+$arrow-left-offset-x: -58px
+$arrow-left-offset-y: -23px
+$arrow-left-width: 21px
+$arrow-left-height: 11px
+$arrow-left-total-width: 86px
+$arrow-left-total-height: 64px
+$arrow-left-image: '../../img/sprite.png'
+$arrow-left: (58px, 23px, -58px, -23px, 21px, 11px, 86px, 64px, '../../img/sprite.png', 'arrow-left', )
+$arrow-right-name: 'arrow-right'
+$arrow-right-x: 32px
+$arrow-right-y: 27px
+$arrow-right-offset-x: -32px
+$arrow-right-offset-y: -27px
+$arrow-right-width: 20px
+$arrow-right-height: 11px
+$arrow-right-total-width: 86px
+$arrow-right-total-height: 64px
+$arrow-right-image: '../../img/sprite.png'
+$arrow-right: (32px, 27px, -32px, -27px, 20px, 11px, 86px, 64px, '../../img/sprite.png', 'arrow-right', )
+$checked-name: 'checked'
+$checked-x: 28px
+$checked-y: 41px
+$checked-offset-x: -28px
+$checked-offset-y: -41px
+$checked-width: 12px
+$checked-height: 9px
+$checked-total-width: 86px
+$checked-total-height: 64px
+$checked-image: '../../img/sprite.png'
+$checked: (28px, 41px, -28px, -41px, 12px, 9px, 86px, 64px, '../../img/sprite.png', 'checked', )
+$cross-name: 'cross'
+$cross-x: 32px
+$cross-y: 0px
+$cross-offset-x: -32px
+$cross-offset-y: 0px
+$cross-width: 26px
+$cross-height: 27px
+$cross-total-width: 86px
+$cross-total-height: 64px
+$cross-image: '../../img/sprite.png'
+$cross: (32px, 0px, -32px, 0px, 26px, 27px, 86px, 64px, '../../img/sprite.png', 'cross', )
+$quote-after-name: 'quote-after'
+$quote-after-x: 58px
+$quote-after-y: 0px
+$quote-after-offset-x: -58px
+$quote-after-offset-y: 0px
+$quote-after-width: 28px
+$quote-after-height: 23px
+$quote-after-total-width: 86px
+$quote-after-total-height: 64px
+$quote-after-image: '../../img/sprite.png'
+$quote-after: (58px, 0px, -58px, 0px, 28px, 23px, 86px, 64px, '../../img/sprite.png', 'quote-after', )
+$quote-before-name: 'quote-before'
+$quote-before-x: 0px
+$quote-before-y: 41px
+$quote-before-offset-x: 0px
+$quote-before-offset-y: -41px
+$quote-before-width: 28px
+$quote-before-height: 23px
+$quote-before-total-width: 86px
+$quote-before-total-height: 64px
+$quote-before-image: '../../img/sprite.png'
+$quote-before: (0px, 41px, 0px, -41px, 28px, 23px, 86px, 64px, '../../img/sprite.png', 'quote-before', )
+$triangle-right-name: 'triangle-right'
+$triangle-right-x: 0px
+$triangle-right-y: 0px
+$triangle-right-offset-x: 0px
+$triangle-right-offset-y: 0px
+$triangle-right-width: 32px
+$triangle-right-height: 41px
+$triangle-right-total-width: 86px
+$triangle-right-total-height: 64px
+$triangle-right-image: '../../img/sprite.png'
+$triangle-right: (0px, 0px, 0px, 0px, 32px, 41px, 86px, 64px, '../../img/sprite.png', 'triangle-right', )
+$spritesheet-width: 86px
+$spritesheet-height: 64px
+$spritesheet-image: '../../img/sprite.png'
+$spritesheet-sprites: ($arrow-left, $arrow-right, $checked, $cross, $quote-after, $quote-before, $triangle-right, )
+$spritesheet: (86px, 64px, '../../img/sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+
+.icon-
+  &arrow-left
+    @include sprite($arrow-left)
+  &arrow-right
+    @include sprite($arrow-right)
+  &checked
+    @include sprite($checked)
+  &cross
+    @include sprite($cross)
+  &quote-after
+    @include sprite($quote-after)
+  &quote-before
+    @include sprite($quote-before)
+  &triangle-right
+    @include sprite($triangle-right)

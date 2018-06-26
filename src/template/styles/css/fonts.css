@@ -1,3 +1,20 @@
 /* Including fonts */
 @font-face {
-  src: url("../../fonts/"); }
+  src: url("../../fonts/Drina.otf");
+  font-family: 'Drina';
+  font-weight: 400; }
+
+@font-face {
+  src: url("../../fonts/Muller Light.otf");
+  font-family: 'Muller';
+  font-weight: 300; }
+
+@font-face {
+  src: url("../../fonts/Muller Regular.otf");
+  font-family: 'Muller';
+  font-weight: 400; }
+
+@font-face {
+  src: url("../../fonts/Muller Bold.otf");
+  font-family: 'Muller';
+  font-weight: 700; }

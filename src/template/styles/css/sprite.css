@@ -1,0 +1,41 @@
+.icon-arrow-left {
+  background-image: url(../../img/sprite.png);
+  background-position: -58px -23px;
+  width: 21px;
+  height: 11px; }
+
+.icon-arrow-right {
+  background-image: url(../../img/sprite.png);
+  background-position: -32px -27px;
+  width: 20px;
+  height: 11px; }
+
+.icon-checked {
+  background-image: url(../../img/sprite.png);
+  background-position: -28px -41px;
+  width: 12px;
+  height: 9px; }
+
+.icon-cross {
+  background-image: url(../../img/sprite.png);
+  background-position: -32px 0px;
+  width: 26px;
+  height: 27px; }
+
+.icon-quote-after {
+  background-image: url(../../img/sprite.png);
+  background-position: -58px 0px;
+  width: 28px;
+  height: 23px; }
+
+.icon-quote-before {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px -41px;
+  width: 28px;
+  height: 23px; }
+
+.icon-triangle-right {
+  background-image: url(../../img/sprite.png);
+  background-position: 0px 0px;
+  width: 32px;
+  height: 41px; }
