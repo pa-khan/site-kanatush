@@ -8,39 +8,17 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites
-$arrow-left-name: 'arrow-left'
-$arrow-left-x: 58px
-$arrow-left-y: 23px
-$arrow-left-offset-x: -58px
-$arrow-left-offset-y: -23px
-$arrow-left-width: 21px
-$arrow-left-height: 11px
-$arrow-left-total-width: 86px
-$arrow-left-total-height: 64px
-$arrow-left-image: '../../img/sprite.png'
-$arrow-left: (58px, 23px, -58px, -23px, 21px, 11px, 86px, 64px, '../../img/sprite.png', 'arrow-left', )
-$arrow-right-name: 'arrow-right'
-$arrow-right-x: 32px
-$arrow-right-y: 27px
-$arrow-right-offset-x: -32px
-$arrow-right-offset-y: -27px
-$arrow-right-width: 20px
-$arrow-right-height: 11px
-$arrow-right-total-width: 86px
-$arrow-right-total-height: 64px
-$arrow-right-image: '../../img/sprite.png'
-$arrow-right: (32px, 27px, -32px, -27px, 20px, 11px, 86px, 64px, '../../img/sprite.png', 'arrow-right', )
 $checked-name: 'checked'
-$checked-x: 28px
-$checked-y: 41px
-$checked-offset-x: -28px
-$checked-offset-y: -41px
+$checked-x: 58px
+$checked-y: 23px
+$checked-offset-x: -58px
+$checked-offset-y: -23px
 $checked-width: 12px
 $checked-height: 9px
 $checked-total-width: 86px
 $checked-total-height: 64px
 $checked-image: '../../img/sprite.png'
-$checked: (28px, 41px, -28px, -41px, 12px, 9px, 86px, 64px, '../../img/sprite.png', 'checked', )
+$checked: (58px, 23px, -58px, -23px, 12px, 9px, 86px, 64px, '../../img/sprite.png', 'checked', )
 $cross-name: 'cross'
 $cross-x: 32px
 $cross-y: 0px
@@ -88,7 +66,7 @@ $triangle-right: (0px, 0px, 0px, 0px, 32px, 41px, 86px, 64px, '../../img/sprite.
 $spritesheet-width: 86px
 $spritesheet-height: 64px
 $spritesheet-image: '../../img/sprite.png'
-$spritesheet-sprites: ($arrow-left, $arrow-right, $checked, $cross, $quote-after, $quote-before, $triangle-right, )
+$spritesheet-sprites: ($checked, $cross, $quote-after, $quote-before, $triangle-right, )
 $spritesheet: (86px, 64px, '../../img/sprite.png', $spritesheet-sprites, )
 
 // The provided mixins are intended to be used with the array-like variables
@@ -143,17 +121,17 @@ $spritesheet: (86px, 64px, '../../img/sprite.png', $spritesheet-sprites, )
       @include sprite($sprite)
 
 .icon-
-  &arrow-left
-    @include sprite($arrow-left)
-  &arrow-right
-    @include sprite($arrow-right)
   &checked
     @include sprite($checked)
+  
   &cross
     @include sprite($cross)
+  
   &quote-after
     @include sprite($quote-after)
+  
   &quote-before
     @include sprite($quote-before)
+  
   &triangle-right
     @include sprite($triangle-right)

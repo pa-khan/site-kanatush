@@ -47,8 +47,7 @@ gulp.task('scripts', function() {
 		'src/template/libs/jquery-mask-plugin/dist/jquery.mask.js',
 		'src/template/libs/fancybox/dist/jquery.fancybox.js',
 		'src/template/libs/slick-carousel/slick/slick.js',
-		'src/template/libs/jparallax/js/jquery.parallax.js',
-		'src/template/libs/jparallax/js/jquery.event.frame.js'
+		'src/template/libs/paroller.js/dist/jquery.paroller.js'
 		])
 		.pipe(concat('libs.js')) 
 		.pipe(gulp.dest('src/template/scripts')); 
