@@ -320,7 +320,8 @@ img {
   cursor: pointer;
   text-align: center;
   -webkit-transition: .3s;
-  transition: .3s; }
+  transition: .3s;
+  background-color: inherit; }
   .btn span {
     display: block; }
   .btn_gradient {
@@ -550,8 +551,8 @@ img {
       height: 170px;
       display: block;
       background: url("../../img/bg/blik.png") no-repeat;
-      -webkit-animation: blik 1.5s ease-in-out 3s;
-              animation: blik 1.5s ease-in-out 3s; }
+      -webkit-animation: blik 4.5s infinite ease-in-out 3s;
+              animation: blik 4.5s infinite ease-in-out 3s; }
   .header__list {
     font-weight: 300;
     max-width: 380px; }
@@ -1840,19 +1841,23 @@ strong {
 @-webkit-keyframes blik {
   0% {
     opacity: 0; }
-  10% {
+  3% {
     opacity: .4; }
-  100% {
+  30% {
     opacity: 1;
     -webkit-transform: translate(800px, -167%) scale(0.05);
-            transform: translate(800px, -167%) scale(0.05); } }
+            transform: translate(800px, -167%) scale(0.05); }
+  30.1% {
+    opacity: 0; } }
 
 @keyframes blik {
   0% {
     opacity: 0; }
-  10% {
+  3% {
     opacity: .4; }
-  100% {
+  30% {
     opacity: 1;
     -webkit-transform: translate(800px, -167%) scale(0.05);
-            transform: translate(800px, -167%) scale(0.05); } }
+            transform: translate(800px, -167%) scale(0.05); }
+  30.1% {
+    opacity: 0; } }
